@@ -1,0 +1,163 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+* {
+  box-sizing: border-box;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #2C2E2E;
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pac {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  -webkit-clip-path: circle(50%);
+          clip-path: circle(50%);
+}
+
+.pac-upper {
+  position: absolute;
+  top: -50px;
+  left: -10px;
+  z-index: 10;
+  height: 100px;
+  width: 120px;
+  border-radius: 0px 0px 0px 0px;
+  background: #F4D146;
+  transform-origin: bottom center;
+  transform: rotate(0deg);
+  -webkit-animation: uchomp 0.7s ease-in-out infinite both;
+          animation: uchomp 0.7s ease-in-out infinite both;
+}
+
+.pac-lower {
+  position: absolute;
+  top: 50px;
+  left: -10px;
+  z-index: 5;
+  height: 100px;
+  width: 120px;
+  border-radius: 0px 0px 0px 0px;
+  background: #F4D146;
+  transform-origin: top center;
+  transform: rotate(0deg);
+  -webkit-animation: lchomp 0.7s ease-in-out infinite both;
+          animation: lchomp 0.7s ease-in-out infinite both;
+}
+
+.pac-eye {
+  position: absolute;
+  z-index: 15;
+  width: 12px;
+  height: 12px;
+  top: 18px;
+  left: 54px;
+  background: #2C2E2E;
+  border-radius: 100%;
+  -webkit-animation: eye 0.7s ease-in-out infinite;
+          animation: eye 0.7s ease-in-out infinite;
+}
+
+.dots {
+  position: absolute;
+  height: 14px;
+  width: 240px;
+  top: 45px;
+  left: 70px;
+  stroke: #F4D146;
+  stroke-width: 14px;
+  stroke-dasharray: 0px 50px;
+  stroke-linecap: round;
+  -webkit-animation: points 0.7s 0.22s linear infinite;
+          animation: points 0.7s 0.22s linear infinite;
+  stroke-dashoffset: 14;
+}
+
+@-webkit-keyframes uchomp {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-45deg);
+  }
+}
+
+@keyframes uchomp {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-45deg);
+  }
+}
+@-webkit-keyframes lchomp {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(45deg);
+  }
+}
+@keyframes lchomp {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(45deg);
+  }
+}
+@-webkit-keyframes eye {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-6px, -3px, 0);
+  }
+}
+@keyframes eye {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-6px, -3px, 0);
+  }
+}
+@-webkit-keyframes points {
+  0% {
+    stroke-dashoffset: 14;
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    stroke-dashoffset: 64;
+  }
+}
+@keyframes points {
+  0% {
+    stroke-dashoffset: 14;
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    stroke-dashoffset: 64;
+  }
+}
